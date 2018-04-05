@@ -604,6 +604,7 @@ class EntityManager
      */
     protected function deleteReference(Entity\ReferenceField $reference, $referenceId)
     {
+        return new Entity\Result();
         $refClass = $reference->getRefEntity()->getDataClass();
         $referenceName = $reference->getName();
         $fieldWidget = $this->getFieldWidget($referenceName);
