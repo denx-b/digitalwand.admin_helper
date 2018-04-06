@@ -496,13 +496,7 @@ abstract class AdminEditHelper extends AdminBaseHelper
 	{
 		if ($this->getPk() !== null) {
 			$className = static::getModel();
-			$result = $className::getList(array(
-				'filter' => array(
-					$this->pk() => $this->getPk()
-				),
-				'select' => $select ?: array('*')
-			));
-
+            $result = $className::getById($this->getPk());
 			return $result->fetch();
 		}
 
