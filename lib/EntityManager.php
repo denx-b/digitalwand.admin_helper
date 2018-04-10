@@ -683,7 +683,7 @@ class EntityManager
 		$referenceConditions = $this->getReferenceConditions($reference);
 
 		// Получение ID связанного элемента
-		if ($ID = $this->getLinkDataId($referenceData, $this->getReferenceDataSet($reference)))
+		if ($ID = $this->getLinkDataId($referenceData, $this->getReferenceDataSet($reference)) && !$referenceData['ID'])
 			$referenceData['ID'] = $ID;
 
 		foreach ($referenceConditions as $refField => $refValue) {
