@@ -682,10 +682,6 @@ class EntityManager
 		// Парсим условия связи двух моделей
 		$referenceConditions = $this->getReferenceConditions($reference);
 
-		// Получение ID связанного элемента
-		if ($ID = $this->getLinkDataId($referenceData, $this->getReferenceDataSet($reference)) && !$referenceData['ID'])
-			$referenceData['ID'] = $ID;
-
 		foreach ($referenceConditions as $refField => $refValue) {
 			// Так как в условиях связи между моделями в основном отношения типа this.field => ref.field или
 			// ref.field => SqlExpression, мы можем использовать это для подстановки данных
